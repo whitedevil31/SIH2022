@@ -36,6 +36,14 @@ function App() {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="qr"
+          component={qr}
+          options={{
+            title: null,
+            headerShown: false,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

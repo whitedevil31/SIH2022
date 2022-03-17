@@ -1,11 +1,11 @@
 import React from 'react';
-import {View , Text} from 'react-native';
-import { styles} from '../../styles/styles'
+import {View, Text} from 'react-native';
+import {styles} from '../../styles/styles';
 
-otp = ()=>
-<View style={styles.center}>
+otp = () => (
+  <View style={styles.center}>
     <Text style={styles.title}>OTP</Text>
-</View>
-
+  </View>
+);
 
 export default otp;
