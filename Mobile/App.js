@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import intro from './src/screens/intro/intro';
 import mobileNo from './src/screens/onboard/mobileNo';
-// import OTP from './src/screens/onboard/OTP';
+import otp from './src/screens/onboard/otp';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,14 +28,14 @@ function App() {
             headerShown: false,
           }}
         />
-        {/* <Stack.Screen
-          name="OTP"
-          component={OTP}
+        <Stack.Screen
+          name="otp"
+          component={otp}
           options={{
             title: null,
             headerShown: false,
           }}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
