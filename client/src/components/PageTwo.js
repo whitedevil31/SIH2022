@@ -5,6 +5,7 @@ export default function PageTwo(){
         <div className='pageTwo' >
             <div className="bg-img">
                 <div className="logo2">/eft Shift</div>
+                <div className="qr-boc"></div>
                 <div className="inst">
                 <ul className='steps'>
                     <li>Step 1: Please download out app from </li>

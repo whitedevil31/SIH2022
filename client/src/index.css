@@ -92,6 +92,9 @@ background-color: #FFE8E0;
 border-radius: 20px;
 text-align: center;
 }
+
+/* Page Two */
+
 .bg-img{
   background-image: url('./assets/bg.svg');
   background-size: cover;
@@ -111,8 +114,16 @@ backdrop-filter: blur(4px);
 border-radius: 10px;
 }
 
-.steps{
+.qr-boc{
 
+  position: absolute;
+  background-color: #fff;
+  width: 285px;
+  height: 290px;
+  left: 570px;
+  top: 87px;
+}
+.steps{
   padding: 2rem;
 }
 .logo2{
@@ -128,7 +139,5 @@ font-weight: 600;
 font-size: 30px;
 line-height: 38px;
 /* identical to box height */
-
-
 color: #00FFFF;
 }
