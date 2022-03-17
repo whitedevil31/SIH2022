@@ -68,6 +68,7 @@ export default function otp({navigation}) {
                 justifyContent: 'center',
                 minHeight: 60,
                 backgroundColor: '#00e0d3',
+                // backgroundColor: '#49FFF4',
                 borderRadius: 16,
                 marginTop: 20,
                 width: Dimensions.get('window').width * 0.87,
@@ -92,7 +93,7 @@ export default function otp({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor:'#EFFFFD',
     flex: 1,
   },
   header: {
