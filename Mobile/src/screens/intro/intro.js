@@ -27,9 +27,7 @@ onPress={()=>{navigation.navigate('mobileNo')}}
 >
 {/* <View style={styles.arrow}> */}
     <Text style={styles.title}>{'>>'}</Text>
-    <Text style={{ fontSize:18,
-       // marginBottom:16,
-        color: 'gray',}}>Next</Text>
+    
 {/* </View> */}
 </TouchableOpacity>
         </View>
