@@ -47,13 +47,13 @@ export default function PageTwo() {
               tyf7t y hi oyugi6ry d
             </li>
           </ul>
-        </div>
-        <button
+          <button
           onClick={openModal}
-          class="bg-green-400 hover:bg-gray-100 text-gray-800 font-bold font-semibold py-2 px-4 border border-gray-400 rounded verify-btn"
+          class="verifybutton"
         >
           Verify Status
         </button>
+        </div>
 
         <Modal
           isOpen={modalIsOpen}
