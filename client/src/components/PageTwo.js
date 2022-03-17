@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import Text from "./qrtext";
+import QRCode from "react-qr-code";
 import close from "../assets/close.jpg";
 import tick from "../assets/tick.png";
 
@@ -17,10 +19,7 @@ export default function PageTwo() {
     setIsOpen(false);
   }
   const generateQr = async () => {
-    //create qr code
-
     setQrGenerated(true);
-    console.log(qrGenerated);
   };
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
@@ -49,29 +48,27 @@ export default function PageTwo() {
                 class="shadow appearance-none border rounded w-full py-2 px-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline input-box"
                 id="username"
                 type="text"
-                onChange={(aadhars) => setAadhars({ value: aadhars })}
+                onChange={(e) => setAadhars(e.target.value)}
                 placeholder="Enter your Aadhar Number"
               />
             </div>
             <button
               class="bg-green-400 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded submit-btn"
-              onClick={() => {
-                console.log("wazaaaa");
-              }}
+              onClick={generateQr}
             >
               Get OTP
             </button>
           </div>
           {qrGenerated == true ? (
             <div className="w-44 h-44  bg-white ">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" />
+              <QRCode value={aadhars} />
             </div>
           ) : (
-            <></>
+            <>hi</>
           )}
         </div>
 
-        <div className="inst">
+        {/* <div className="inst">
           <ul className="steps">
             <li>
               Step 1: Please download our app from Playstore and register there
@@ -90,7 +87,7 @@ export default function PageTwo() {
           <button onClick={openModal} class="verifybutton">
             Verify Status
           </button>
-        </div>
+        </div> */}
 
         <Modal
           isOpen={modalIsOpen}
@@ -100,7 +97,7 @@ export default function PageTwo() {
           contentLabel="Example Modal"
         >
           <button onClick={closeModal}>
-          <img src={close} className="closesize" alt="Close" />
+            <img src={close} className="closesize" alt="Close" />
           </button>
           <div className="greentext">Verified Successfully</div>
           <img src={tick} className="ticksize" alt="Tick" />

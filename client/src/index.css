@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,8 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: linear-gradient(to right, #fff , #FF8458 ); */
-  background-color: #FF8458;
-
+  background-color: #ff8458;
 }
 
 code {
@@ -20,40 +18,43 @@ code {
     monospace;
 }
 
-.img1{
-
-position: absolute;
-width: 771px;
-height: 527px;
-left: 57px;
-top: 77px;
+.img1 {
+  position: absolute;
+  width: 771px;
+  height: 527px;
+  left: 57px;
+  top: 77px;
 }
-.enterOtp{
-position: absolute;
-margin-left: 3.5rem;
-width: 340px;
-height: 486px;
-left: 896px;
-top: 97px;
+.enterOtp {
+  position: absolute;
+  margin-left: 3.5rem;
+  width: 340px;
+  height: 486px;
+  left: 896px;
+  top: 97px;
 
-background: linear-gradient(193.75deg, #FFE8E0 58.89%, rgba(255, 232, 224, 0.88) 102.39%);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
+  background: linear-gradient(
+    193.75deg,
+    #ffe8e0 58.89%,
+    rgba(255, 232, 224, 0.88) 102.39%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
 }
 
-.aadhar{
+.aadhar {
   margin: auto;
   width: 50%;
-  padding-top: 2rem;  
+  padding-top: 2rem;
 }
-h1{
+h1 {
   padding-left: 2rem;
   margin: 1rem;
 }
-.main{
+.main {
   padding: 4rem;
 }
-.input-box{
+.input-box {
   margin: 0;
   padding-left: 11.2px;
   width: 105%;
@@ -63,59 +64,56 @@ h1{
 
 /* Buttons */
 
-.submit-btn{
+.submit-btn {
   margin-left: 17%;
   padding: 0.5rem;
   width: 70%;
   border-radius: 15px;
 }
-.verify-btn{
+.verify-btn {
   position: absolute;
-width: 210px;
-height: 48px;
-left: 600px;
-top: 600px;
+  width: 210px;
+  height: 48px;
+  left: 600px;
+  top: 600px;
 
-background: #4CFF89;
-border-radius: 5px;
+  background: #4cff89;
+  border-radius: 5px;
 }
 
-.register{
+.register {
+  position: absolute;
+  width: 340px;
+  height: 42px;
+  left: 950px;
+  top: 618px;
 
-position: absolute;
-width: 340px;
-height: 42px;
-left: 950px;
-top: 618px;
-
-background-color: #FFE8E0;
-border-radius: 20px;
-text-align: center;
+  background-color: #ffe8e0;
+  border-radius: 20px;
+  text-align: center;
 }
 
 /* Page Two */
 
-.bg-img{
-  background-image: url('./assets/bg.svg');
+.bg-img {
+  background-image: url("./assets/bg.svg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  
 }
-.inst{
+.inst {
   position: absolute;
-width: 1003px;
-height: 158px;
-left: 17%;
-top: 400px;
+  width: 1003px;
+  height: 158px;
+  left: 17%;
+  top: 400px;
 
-background: rgba(255, 255, 255, 0.72);
-backdrop-filter: blur(3px);
-border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
 }
 
-.qr-boc{
-
+.qr-boc {
   position: absolute;
   background-color: #fff;
   width: 285px;
@@ -123,91 +121,111 @@ border-radius: 10px;
   left: 570px;
   top: 87px;
 }
-.steps{
+.steps {
   padding: 2rem;
 }
-.logo2{
+.logo2 {
   position: absolute;
-width: 150px;
-height: 44px;
-left: 27px;
-top: 27px;
+  width: 150px;
+  height: 44px;
+  left: 27px;
+  top: 27px;
 
-font-family: 'Poppins';
-font-style: italic;
-font-weight: 600;
-font-size: 30px;
-line-height: 38px;
-/* identical to box height */
-color: #00FFFF;
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  /* identical to box height */
+  color: #00ffff;
 }
 
-.verifybutton{
+.verifybutton {
   position: relative;
   display: inherit;
-  background-color: #4CFF89;
+  background-color: #4cff89;
   border-radius: 15px;
   height: 50px;
-  width:140px;
+  width: 140px;
   font-weight: 600;
   color: rgb(46, 46, 46);
   transition: all 0.3s ease 0s;
-  left:42%;
-  top:30%;
+  left: 42%;
+  top: 30%;
 }
 
-.verifybutton:hover{
+.verifybutton:hover {
   background-color: #06ff59;
   color: rgb(0, 0, 0);
-  top:25%;
+  top: 25%;
 }
 
-.closesize{
-  width:5%;
+.closesize {
+  width: 5%;
   transition: all 0.3s ease 0s;
 }
 
-.closesize:hover{
-  width:6%;
+.closesize:hover {
+  width: 6%;
 }
 
-.ticksize{
+.ticksize {
   height: 100px;
-  margin:0px;
+  margin: 0px;
   margin-left: 36%;
   margin-bottom: 8%;
   animation-name: pulse;
   animation-duration: 1.5s;
-  animation-iteration-count: 2;
+  animation-iteration-count: infinite;
 }
 
-
-
-.greentext{
+.greentext {
   position: relative;
-  margin:0px;
+  margin: 0px;
   margin-left: 32%;
   margin-bottom: 6%;
   color: #06af3e;
   font-size: 20px;
 }
 
-.modaltext{
+.modaltext {
   position: relative;
-  margin:0px;
+  margin: 0px;
   margin-left: 25%;
 }
 
 @keyframes pulse {
-  0%   {height: 100px}
-  10%   {height: 95px}
-  20%   {height: 90px}
-  30%   {height: 85px}
-  40%   {height: 80px}
-  50%   {height: 75px}
-  60%   {height: 80px}
-  70%   {height: 85px}
-  80%   {height: 90px}
-  90%   {height: 95px}
-  100% {height: 100px}
+  0% {
+    height: 100px;
+  }
+  10% {
+    height: 95px;
+  }
+  20% {
+    height: 90px;
+  }
+  30% {
+    height: 85px;
+  }
+  40% {
+    height: 80px;
+  }
+  50% {
+    height: 75px;
+  }
+  60% {
+    height: 80px;
+  }
+  70% {
+    height: 85px;
+  }
+  80% {
+    height: 90px;
+  }
+  90% {
+    height: 95px;
+  }
+  100% {
+    height: 100px;
+  }
 }
