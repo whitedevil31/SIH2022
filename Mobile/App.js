@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import intro from './src/screens/intro/intro';
 import mobileNo from './src/screens/onboard/mobileNo';
 import otp from './src/screens/onboard/otp';
+import QRScan from './src/screens/qr/qr';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="intro"
-          component={intro}
+          component={QRScan}
           options={{
             title: null,
             headerShown: false,
@@ -31,6 +32,14 @@ function App() {
         <Stack.Screen
           name="otp"
           component={otp}
+          options={{
+            title: null,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="qr"
+          component={QRScan}
           options={{
             title: null,
             headerShown: false,
