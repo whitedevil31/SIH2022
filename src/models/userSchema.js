@@ -1,21 +1,13 @@
-const mongoose = require("mongoose");
-
+const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema(
   {
     mobileNumber: {
       type: String,
-     
     },
-  
   },
-  { timestamps: true }
-);
+  { timestamps: true },
+)
 
-
-
-
-
-
-const Users = mongoose.model("Users", userSchema);
-module.exports = Users;
+const Users = mongoose.model('Users', userSchema)
+module.exports = Users
