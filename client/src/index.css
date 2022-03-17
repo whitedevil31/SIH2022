@@ -106,11 +106,16 @@ h1 {
   width: 1003px;
   height: 158px;
   left: 17%;
-  top: 400px;
-
+  top: 480px;
+  transition: all 0.3s ease 0s;
   background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(1px);
   border-radius: 10px;
+}
+
+.inst:hover{
+  backdrop-filter: blur(10px);
+  top:470px;
 }
 
 .qr-boc {
@@ -150,14 +155,14 @@ h1 {
   font-weight: 600;
   color: rgb(46, 46, 46);
   transition: all 0.3s ease 0s;
-  left: 42%;
+  left: 43%;
   top: 30%;
 }
 
 .verifybutton:hover {
   background-color: #06ff59;
   color: rgb(0, 0, 0);
-  top: 25%;
+  top: 28%;
 }
 
 .closesize {
@@ -228,4 +233,46 @@ h1 {
   100% {
     height: 100px;
   }
+}
+
+.qrempty{
+  position:relative;
+  height:250px;
+  width:250px;
+  margin-bottom: 0px;
+  background-color: white;
+}
+
+.genqr{
+  position: relative;
+  height: 75px;
+  width: 180px;
+  right: 6%;
+  top: 47%;
+  border-radius: 10px;
+  background-color: #25ff6e;
+  color: rgb(53, 52, 52);
+  transition: all 0.3s ease 0s;
+}
+
+.genqr:hover{
+  background-color: #06ff59;
+  color: rgb(0, 0, 0);
+}
+
+.afterqr{
+  position: relative;
+  height: 250px;
+  width: 250px;
+  background-color: rgb(255, 255, 255);
+}
+
+.aadhaarinput{
+  position: relative;
+  top:50%;
+  left:10%;
+  width: 350px;
+  height: 75px;
+  border-radius: 10px;
+  text-align: center;
 }

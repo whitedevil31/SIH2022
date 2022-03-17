@@ -45,7 +45,7 @@ export default function PageTwo() {
           <div className="w-1/2 flex justify-between">
             <div class="mb-4">
               <input
-                class="shadow appearance-none border rounded w-full py-2 px-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline input-box"
+                class="aadhaarinput"
                 id="username"
                 type="text"
                 onChange={(e) => setAadhars(e.target.value)}
@@ -53,22 +53,24 @@ export default function PageTwo() {
               />
             </div>
             <button
-              class="bg-green-400 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded submit-btn"
+              class="genqr"
               onClick={generateQr}
             >
               Get OTP
             </button>
           </div>
           {qrGenerated == true ? (
-            <div className="w-44 h-44  bg-white ">
+            <div className="afterqr">
               <QRCode value={aadhars} />
             </div>
           ) : (
-            <>hi</>
+            <>
+            <div className="qrempty"></div>
+            </>
           )}
         </div>
 
-        {/* <div className="inst">
+        <div className="inst">
           <ul className="steps">
             <li>
               Step 1: Please download our app from Playstore and register there
@@ -84,10 +86,11 @@ export default function PageTwo() {
             </li>
             <li>Step 4 : Enjoy seamless verification process now,Thank you</li>
           </ul>
+          </div>
           <button onClick={openModal} class="verifybutton">
             Verify Status
           </button>
-        </div> */}
+        
 
         <Modal
           isOpen={modalIsOpen}
