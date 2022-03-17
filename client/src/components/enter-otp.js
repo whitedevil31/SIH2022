@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import aadhar from "../assets/aadhar.png";
 
 export default function EnterOtp() {
-  // const Data = {
-  //   aadharNumber: aadhars.value,
-  // };
-
   const [aadhars, setAadhars] = useState("");
 
   return (
