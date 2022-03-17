@@ -51,7 +51,7 @@ router.post('/getOtp', async (req, res) => {
   }
 })
 
-router.get('/verifyOtp', async (req, res) => {
+router.post('/verifyOtp', async (req, res) => {
   try {
     const mobileNumber = req.body.mobileNumber
     const userOtp = req.body.userOtp
