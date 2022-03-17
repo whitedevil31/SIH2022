@@ -1,60 +1,44 @@
-import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-//import Icon from 'react-native-vector-icons/AntDesign';
-//import { styles} from '../../styles/styles'
+import * as React from 'react';
+import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import intro from './src/screens/intro/intro';
+import mobileNo from './src/screens/onboard/mobileNo';
+import otp from './src/screens/onboard/otp';
 
-const intro = () => {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
-      <TouchableOpacity style={{alignItems: 'flex-end'}}>
-        {/* <View style={styles.arrow}> */}
-        <Text style={styles.title}>{'>>'}</Text>
-        {/* </View> */}
-      </TouchableOpacity>
-      <Image
-        source={require('./src/assets/images/pic.png')}
-        style={{margin: 20, alignSelf: 'center', marginBottom: 0}}
-        resizeMode="contain"
-      />
-      <View style={{flex: 1 / 4}}>
-        <Text style={styles.text}>Do You Bill My Card</Text>
-      </View>
-      <View style={{flex: 1 / 4}}>
-        <Text style={styles.text2}>
-          We will never bill your card. We earn from services and not from
-          users.
-        </Text>
-      </View>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="intro"
+          component={intro}
+          options={{
+            title: null,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="mobileNo"
+          component={mobileNo}
+          options={{
+            title: null,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="otp"
+          component={otp}
+          options={{
+            title: null,
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-const styles = StyleSheet.create({
-  arrow: {
-    flex: 1 / 4,
-    //justifyContent :'flex-end',
-    alignItems: 'flex-end',
-    backgroundColor: 'white',
-  },
-  title: {
-    fontSize: 36,
-    // marginBottom:16,
-    color: 'gray',
-  },
-  text: {
-    textAlign: 'center',
-    alignItems: 'center',
-    fontSize: 24,
-    fontFamily: 'OpenSans',
-    marginLeft: 20,
-    marginRight: 20,
-  },
-  text2: {
-    textAlign: 'center',
-    alignItems: 'center',
-    fontSize: 24,
-    fontFamily: 'OpenSans',
-    marginHorizontal: 35,
-  },
-});
+}
 
-export default intro;
+export default App;
