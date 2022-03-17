@@ -64,7 +64,7 @@ export default function otp({navigation}) {
         <View style={{alignItems: 'center', justifyContent: 'center',marginTop:30}}>
         <TouchableOpacity  
    //onPress={_onLoginPressed}
-   style={{ alignItems: 'center', justifyContent: 'center', minHeight: 60, backgroundColor: '#00e0d3', borderRadius: 16, 
+   style={{ alignItems: 'center', justifyContent: 'center', minHeight: 60, backgroundColor: '#49FFF4', borderRadius: 16, 
     marginTop: 20, width: Dimensions.get('window').width * 0.87, }}>
          
          <Text 
@@ -84,7 +84,7 @@ export default function otp({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        backgroundColor:'#EFFFFD',
         flex: 1,
       },
       header: {

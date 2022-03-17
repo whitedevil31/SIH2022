@@ -5,7 +5,7 @@ import {View , Text,StyleSheet,Image,TouchableOpacity} from 'react-native';
 
 export default function intro ({navigation}){
     return (
-<View style={{flex: 1,backgroundColor:'white',}}>
+<View style={{flex: 1,backgroundColor:'#EFFFFD',}}>
 
 <Image
             source={require('../../assets/images/pic.png')}
