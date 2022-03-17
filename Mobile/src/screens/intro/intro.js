@@ -3,10 +3,12 @@ import {View , Text,StyleSheet,Image,TouchableOpacity} from 'react-native';
 //import Icon from 'react-native-vector-icons/AntDesign';
 //import { styles} from '../../styles/styles'
 
-const intro =()=>{
+const intro =({navigation})=>{
     return (
 <View style={{flex: 1,backgroundColor:'white',}}>
-<TouchableOpacity style={{alignItems: 'flex-end',}}>
+<TouchableOpacity style={{alignItems: 'flex-end',}}
+onPress={()=>{navigation.navigate('mobileNo')}}
+>
 {/* <View style={styles.arrow}> */}
     <Text style={styles.title}>{'>>'}</Text>
 {/* </View> */}
