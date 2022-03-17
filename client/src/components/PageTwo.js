@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import Text from "./qrtext";
 import QRCode from "react-qr-code";
 import close from "../assets/close.jpg";
 import tick from "../assets/tick.png";
