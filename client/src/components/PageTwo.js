@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import close from "../assets/close.jpg";
+import tick from "../assets/tick.png";
 
 export default function PageTwo() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -62,8 +64,12 @@ export default function PageTwo() {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
+          <button onClick={closeModal}>
+          <img src={close} className="closesize" alt="Close" />
+          </button>
+          <div className="greentext">Verified Successfully</div>
+          <img src={tick} className="ticksize" alt="Tick" />
+          <div className="modaltext">You can use offline otp to login!</div>
         </Modal>
       </div>
     </div>

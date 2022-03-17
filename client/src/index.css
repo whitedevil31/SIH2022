@@ -161,3 +161,53 @@ color: #00FFFF;
   color: rgb(0, 0, 0);
   top:25%;
 }
+
+.closesize{
+  width:5%;
+  transition: all 0.3s ease 0s;
+}
+
+.closesize:hover{
+  width:6%;
+}
+
+.ticksize{
+  height: 100px;
+  margin:0px;
+  margin-left: 36%;
+  margin-bottom: 8%;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: 2;
+}
+
+
+
+.greentext{
+  position: relative;
+  margin:0px;
+  margin-left: 32%;
+  margin-bottom: 6%;
+  color: #06af3e;
+  font-size: 20px;
+}
+
+.modaltext{
+  position: relative;
+  margin:0px;
+  margin-left: 25%;
+}
+
+@keyframes pulse {
+  0%   {height: 100px}
+  10%   {height: 95px}
+  20%   {height: 90px}
+  30%   {height: 85px}
+  40%   {height: 80px}
+  50%   {height: 75px}
+  60%   {height: 80px}
+  70%   {height: 85px}
+  80%   {height: 90px}
+  90%   {height: 95px}
+  100% {height: 100px}
+}
