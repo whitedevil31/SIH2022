@@ -3,6 +3,7 @@ import Modal from "react-modal";
 
 export default function PageTwo() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [aadhars, setAadhars] = useState("");
   const [qrGenerated, setQrGenerated] = React.useState(false);
   let subtitle;
 
