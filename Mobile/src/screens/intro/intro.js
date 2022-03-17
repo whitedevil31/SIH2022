@@ -34,11 +34,23 @@ export default function intro({navigation}) {
             }}>
             Next
           </Text>
-          {/* </View> */}
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+        </View>
+        <View style={{ flex: 1 / 4, }}>
+          <Text style={styles.text2}>
+          We will never bill your card. We earn from services and not from users.
+          </Text>
+          <TouchableOpacity style={{alignItems: 'center',marginTop:10}}
+onPress={()=>{navigation.navigate('mobileNo')}}
+>
+{/* <View style={styles.arrow}> */}
+    <Text style={styles.title}>{'>>'}</Text>
+    
+{/* </View> */}
+</TouchableOpacity>
+        </View>
+        
+</View>
+    )
 }
 const styles = StyleSheet.create({
   arrow: {
