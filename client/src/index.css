@@ -106,11 +106,11 @@ text-align: center;
   position: absolute;
 width: 1003px;
 height: 158px;
-left: 15%;
+left: 17%;
 top: 400px;
 
 background: rgba(255, 255, 255, 0.72);
-backdrop-filter: blur(4px);
+backdrop-filter: blur(3px);
 border-radius: 10px;
 }
 
@@ -140,4 +140,24 @@ font-size: 30px;
 line-height: 38px;
 /* identical to box height */
 color: #00FFFF;
+}
+
+.verifybutton{
+  position: relative;
+  display: inherit;
+  background-color: #4CFF89;
+  border-radius: 15px;
+  height: 50px;
+  width:140px;
+  font-weight: 600;
+  color: rgb(46, 46, 46);
+  transition: all 0.3s ease 0s;
+  left:42%;
+  top:30%;
+}
+
+.verifybutton:hover{
+  background-color: #06ff59;
+  color: rgb(0, 0, 0);
+  top:25%;
 }
