@@ -34,7 +34,25 @@ export default function PageTwo() {
     <div className="pageTwo">
       <div className="bg-img">
         <div className="logo2">/eft Shift</div>
-        <div className="qr-boc"></div>
+        <div className="main">
+          <div class="mb-4">
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline input-box"
+              id="username"
+              type="text"
+              onChange={(aadhars) => setAadhars({ value: aadhars })}
+              placeholder="Enter your Aadhar Number"
+            />
+          </div>
+          <button
+            class="bg-green-400 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded submit-btn"
+            onClick={() => {
+              console.log("wazaaaa");
+            }}
+          >
+            Get OTP
+          </button>
+        </div>
         <div className="inst">
           <ul className="steps">
             <li>Step 1: Please download out app from </li>
@@ -47,12 +65,9 @@ export default function PageTwo() {
               tyf7t y hi oyugi6ry d
             </li>
           </ul>
-          <button
-          onClick={openModal}
-          class="verifybutton"
-        >
-          Verify Status
-        </button>
+          <button onClick={openModal} class="verifybutton">
+            Verify Status
+          </button>
         </div>
 
         <Modal
