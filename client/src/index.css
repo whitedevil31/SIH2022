@@ -113,9 +113,9 @@ h1 {
   border-radius: 10px;
 }
 
-.inst:hover{
+.inst:hover {
   backdrop-filter: blur(10px);
-  top:470px;
+  top: 470px;
 }
 
 .qr-boc {
@@ -235,15 +235,16 @@ h1 {
   }
 }
 
-.qrempty{
-  position:relative;
-  height:250px;
-  width:250px;
+.qrempty {
+  position: relative;
+
+  height: 250px;
+  width: 250px;
   margin-bottom: 0px;
-  background-color: white;
+  background-color: #fff;
 }
 
-.genqr{
+.genqr {
   position: relative;
   height: 75px;
   width: 160px;
@@ -255,23 +256,22 @@ h1 {
   transition: all 0.3s ease 0s;
 }
 
-.genqr:hover{
+.genqr:hover {
   background-color: #06ff59;
   color: rgb(0, 0, 0);
   transform: scale(1.12);
 }
 
-.afterqr{
+.afterqr {
   position: relative;
   height: 250px;
   width: 250px;
-  background-color: rgb(255, 255, 255);
 }
 
-.aadhaarinput{
+.aadhaarinput {
   position: relative;
-  top:50%;
-  left:5%;
+  top: 50%;
+  left: 5%;
   width: 350px;
   height: 75px;
   border-radius: 10px;
@@ -279,6 +279,6 @@ h1 {
   transition: all 0.3s ease 0s;
 }
 
-.aadhaarinput:hover{
+.aadhaarinput:hover {
   transform: scale(1.12);
 }

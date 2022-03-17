@@ -51,11 +51,8 @@ export default function PageTwo() {
                 placeholder="Enter your Aadhar Number"
               />
             </div>
-            <button
-              class="genqr"
-              onClick={generateQr}
-            >
-              Get OTP
+            <button class="genqr" onClick={generateQr}>
+              Generate QR Code!
             </button>
           </div>
           {qrGenerated == true ? (
@@ -64,7 +61,7 @@ export default function PageTwo() {
             </div>
           ) : (
             <>
-            <div className="qrempty"></div>
+              <div className="qrempty"></div>
             </>
           )}
         </div>
@@ -85,11 +82,10 @@ export default function PageTwo() {
             </li>
             <li>Step 4 : Enjoy seamless verification process now,Thank you</li>
           </ul>
-          </div>
-          <button onClick={openModal} class="verifybutton">
-            Verify Status
-          </button>
-        
+        </div>
+        <button onClick={openModal} class="verifybutton">
+          Verify Status
+        </button>
 
         <Modal
           isOpen={modalIsOpen}
