@@ -7,6 +7,7 @@ import mobileNo from './src/screens/onboard/mobileNo';
 import otp from './src/screens/onboard/otp';
 import splash from './src/screens/splash';
 import dashboard from './src/screens/Dashboard/dashboard'
+import QRScan from './src/screens/qr/qr';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,8 +29,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="intro"
-          component={dashboard}
-          
+          component={QRScan}
           options={{
             //headerTitle: (props) => <LogoTitle {...props} />
             title: null,
@@ -53,22 +53,14 @@ function App() {
             headerShown: false,
           }}
         />
-        {/* <Stack.Screen
-          name="dashboard"
-          component={dashboard}
+        <Stack.Screen
+          name="qr"
+          component={QRScan}
           options={{
             title: null,
             headerShown: false,
           }}
-        /> */}
-        {/* <Stack.Screen
-          name="splash"
-          component={splash}
-          options={{
-            title: null,
-            headerShown: false,
-          }}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

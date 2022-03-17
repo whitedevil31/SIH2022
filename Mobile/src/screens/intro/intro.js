@@ -1,5 +1,5 @@
 import React from 'react';
-import {View , Text,StyleSheet,Image,TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 //import Icon from 'react-native-vector-icons/AntDesign';
 //import { styles} from '../../styles/styles'
 
@@ -36,34 +36,32 @@ onPress={()=>{navigation.navigate('mobileNo')}}
     )
 }
 const styles = StyleSheet.create({
-    arrow:{
-        flex:1 / 4,
-        //justifyContent :'flex-end',
-        alignItems: 'flex-end',
-        backgroundColor:'white',
-
-    },
-    title: { 
-        fontSize:36,
-       // marginBottom:16,
-        color: 'gray',
-    },
-    text: {
-        textAlign: 'center',
-        alignItems: 'center',
-        fontSize: 24,
-        fontFamily: 'OpenSans',
-    marginLeft:20,
-    marginRight:20,color: 'black',
-      },
-      text2: {
-        textAlign: 'center',
-        alignItems: 'center',
-        fontSize: 20,
-        fontFamily: 'OpenSans',
-    marginHorizontal:35,
+  arrow: {
+    flex: 1 / 4,
+    //justifyContent :'flex-end',
+    alignItems: 'flex-end',
+    backgroundColor: 'white',
+  },
+  title: {
+    fontSize: 36,
+    // marginBottom:16,
+    color: 'gray',
+  },
+  text: {
+    textAlign: 'center',
+    alignItems: 'center',
+    fontSize: 24,
+    fontFamily: 'OpenSans',
+    marginLeft: 20,
+    marginRight: 20,
     color: 'black',
-      },
-  
-  })
-  
+  },
+  text2: {
+    textAlign: 'center',
+    alignItems: 'center',
+    fontSize: 20,
+    fontFamily: 'OpenSans',
+    marginHorizontal: 35,
+    color: 'black',
+  },
+});
