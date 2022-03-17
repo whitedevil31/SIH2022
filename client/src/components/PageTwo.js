@@ -3,7 +3,7 @@ import Modal from "react-modal";
 
 export default function PageTwo() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
-
+const [qrGenerated,setQrGenerated ]=React.useState(false)
   let subtitle;
 
   function openModal() {
@@ -13,7 +13,13 @@ export default function PageTwo() {
   function closeModal() {
     setIsOpen(false);
   }
+const generateQr=async()=>{
+  //create qr code 
 
+
+  setQrGenerated(true)
+  console.log(qrGenerated)
+}
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
     subtitle.style.color = "#f00";
@@ -33,18 +39,30 @@ export default function PageTwo() {
   return (
     <div className="pageTwo">
       <div className="bg-img">
-        <div className="logo2">/eft Shift</div>
-        <div className="qr-boc"></div>
+      <div className="logo2">/eft Shift</div>
+      <div className='flex pt-48 pl-72'>
+      <div className='w-1/2 flex justify-between'>
+      <div className='flex flex-col w-1/2'> <input type='text' className="py-2 border rounded-lg w-82" placeholder="Enter your mobile "/>
+        <button className="bg-green-500 mt-8 py-2 " onClick={ generateQr}>GENERATE QR CODE</button></div>
+       
+      </div>
+      {qrGenerated==true ? (<div className="w-44 h-44  bg-white ">
+      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png'/></div>): (<></>)}
+      
+      </div>
+    
+   
         <div className="inst">
           <ul className="steps">
-            <li>Step 1: Please download out app from </li>
+            <li>Step 1: Please download our app from Playstore and register there to continue </li>
             <li>
-              Step 2 kjgyjrdjyfukhb yjgj yhfc kyvluhvygk hjb kuftyf kytv kluv u
-              it d6rd6rt yugyu fiotf uiugo67trfi67f ou pyup87g
+              Step 2: Once registered ,Please use the inbuilt QR code scanner to scan this QR code .
             </li>
             <li>
-              Step 3 gcrestg il iyu gvyit glu buyotyfio uly ouvo7tyfri6ditf uo
-              tyf7t y hi oyugi6ry d
+              Step 3: After scanning please click on verify status button to link Your Cowin profile with our App
+            </li>
+            <li>
+              Step 4 : Enjoy seamless verification process now,Thank you
             </li>
           </ul>
           <button
@@ -63,7 +81,7 @@ export default function PageTwo() {
           contentLabel="Example Modal"
         >
           <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
+          <div>Successfully connected . You can now use our App to generate offline OTP for future use</div>
         </Modal>
       </div>
     </div>
