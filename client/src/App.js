@@ -14,6 +14,7 @@ function App() {
     <Router>
     <Routes>
             <Route path="/scan" element={<PageTwo />}>
+
             </Route>
             <Route path="/" element={<div><div><img src={pic} className = "img1" alt="logo" /></div>
           <EnterOtp></EnterOtp>
