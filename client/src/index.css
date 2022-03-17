@@ -245,10 +245,10 @@ h1 {
 
 .genqr{
   position: relative;
-  height: 65px;
-  width: 180px;
-  right: 6%;
-  top: 50%;
+  height: 75px;
+  width: 160px;
+  right: 10%;
+  top: 47%;
   border-radius: 10px;
   background-color: #25ff6e;
   color: rgb(53, 52, 52);
@@ -271,9 +271,14 @@ h1 {
 .aadhaarinput{
   position: relative;
   top:50%;
-  left:10%;
+  left:5%;
   width: 350px;
   height: 75px;
   border-radius: 10px;
   text-align: center;
+  transition: all 0.3s ease 0s;
+}
+
+.aadhaarinput:hover{
+  transform: scale(1.12);
 }
