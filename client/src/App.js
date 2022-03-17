@@ -1,4 +1,4 @@
-import pic from "./assets/front-img.png";
+import pic from "./assets/front-img.svg";
 import './App.css';
 import PageTwo from "./components/PageTwo";
 import EnterOtp from "./components/enter-otp";
