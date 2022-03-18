@@ -3,7 +3,7 @@ const User = require('../models/userSchema')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const Otp = require('../models/otpSchema')
-
+const Cryptr = require('cryptr')
 router.post('/getOtp', async (req, res) => {
   try {
     const mobileNumber = req.body.mobileNumber
@@ -51,8 +51,12 @@ router.post('/verifyOtp', async (req, res) => {
       if (await bcrypt.compare(mobileNumber, findOtp.userPhoneNumber)) {
         await Otp.deleteOne({ _id: findOtp._id })
         const createUser = new User({ mobileNumber: mobileHash })
-        await createUser.save()
-        return res.status(200).json({ message: 'Otp verified' })
+        const user = await createUser.save()
+        const cryptr = new Cryptr('thisissecret')
+
+        return res
+          .status(200)
+          .json({ mobileNumber: cryptr.encrypt(mobileNumber), id: user._id })
       } else {
         return res.status(409).json({ message: 'Incorrect OTP' })
       }

@@ -1,6 +1,8 @@
 const express = require('express')
 const App = require('../models/appsSchema')
 const router = express.Router()
+const crypto = require('crypto')
+const Cryptr = require('cryptr')
 router.post('/add', async (req, res) => {
   try {
     const newApp = new App({
@@ -16,4 +18,12 @@ router.post('/add', async (req, res) => {
   }
 })
 
+router.post('/encrypt', (req, res) => {
+  const cryptr = new Cryptr('thisissecret')
+  return res.status(200).json({ message: cryptr.encrypt(req.body.key) })
+})
+router.post('/decrypt', (req, res) => {
+  const cryptr = new Cryptr('thisissecret')
+  return res.status(200).json({ message: cryptr.decrypt(req.body.key) })
+})
 module.exports = router

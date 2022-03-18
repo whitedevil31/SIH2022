@@ -5,15 +5,13 @@ import QRCode from 'react-qr-code'
 import close from '../assets/close.jpg'
 import tick from '../assets/tick.png'
 import axios, { AxiosResponse } from 'axios'
-import Cryptr from 'cryptr'
-
 export default function PageTwo() {
   const [modalIsOpen, setIsOpen] = React.useState(false)
   const [aadhars, setAadhars] = useState('')
   const [encrypted, setEncrypted] = useState('')
   const [qrGenerated, setQrGenerated] = React.useState(false)
   let subtitle
-  const cryptr = new Cryptr('sih2020')
+  //  const cryptr = new Cryptr('sih2020')
 
   const data = {
     aadharNumber: aadhars,
@@ -36,12 +34,23 @@ export default function PageTwo() {
         'http://localhost:5000/aadhar/get',
         data,
       )
-      const encryptedMobile = cryptr.encrypt(postData.data)
+      console.log(postData)
+      const getEncrypt = await axios.post(
+        'http://localhost:5000/apps/encrypt',
+        { key: postData.data.mobileNumber },
+      )
+      console.log(getEncrypt.data)
+      // .update('welcome')
+      // .digest('hex')
+
+      // const encryptedMobile = cryptr.encrypt(postData.data)
       const websiteName = 'https://www.cowin.gov.in/'
-      encryptedData = {
-        mobile: encryptedMobile,
+      const qrData = {
+        mobile: getEncrypt.data.message,
         websiteName,
       }
+      setEncrypted(JSON.stringify(qrData))
+      setQrGenerated(true)
     } catch (e) {
       console.log(e)
     }
@@ -82,7 +91,7 @@ export default function PageTwo() {
           </div>
           {qrGenerated == true ? (
             <div className="afterqr">
-              <QRCode value={encryptedData} />
+              <QRCode value={encrypted} />
             </div>
           ) : (
             <>
