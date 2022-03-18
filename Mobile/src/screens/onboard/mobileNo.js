@@ -13,26 +13,27 @@ import {
 //mport Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function mobileNo({navigation}) {
-  // const [mobileNumber, setmobileNumber] = useState('');
+  const [mobileNumber, setmobileNumber] = useState('');
 
-  // const postOrder = () => {
-  //   const url = 'http://localhost:5000/user/getOtp';
+  const postOrder = () => {
+    const url = 'http://localhost:5000/user/getOtp';
 
-  //   let data = {
-  //     mobileNumber: mobileNumber,
-  //   };
+    let data = {
+      mobileNumber: mobileNumber,
+    };
 
-  //   console.log('Data:' + JSON.stringify(data));
-  //   fetch(url, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(data),
-  //   }).then(response => (console.log(response),
-  //   navigation.navigate('otp'))
-  //   );
-  // };
+    console.log('Data:' + JSON.stringify(data));
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then(response => (console.log(response)
+    //navigation.navigate('otp')
+    )
+    );
+  };
 
   return (
     <View style={styles.container}>
@@ -116,8 +117,8 @@ export default function mobileNo({navigation}) {
               placeholder="Enter your phone no."
               placeholderTextColor="gray"
               //onChangeText={text => setEmail({value: text, error: ''})}
-              // onChangeText={text => setmobileNumber(text)}
-              // defaultValue={mobileNumber}
+              onChangeText={text => setmobileNumber(text)}
+              defaultValue={mobileNumber}
               style={{
                 fontWeight: '400',
                 fontSize: 18,
@@ -142,10 +143,10 @@ export default function mobileNo({navigation}) {
 
                 //marginHorizontal: 6,
               }}
-              //onPress={postOrder}
-               onPress={() => {
-                 navigation.navigate('otp');
-               }}
+              onPress={postOrder}
+              //  onPress={() => {
+              //    navigation.navigate('otp');
+              //  }}
             >
               <Text style={styles.text2}>Continue</Text>
             </TouchableOpacity>
