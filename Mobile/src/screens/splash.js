@@ -10,9 +10,15 @@ import {
   Dimensions,
 } from 'react-native';
 
-//mport Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import cryptr from 'react-native-cryptr';
 
 export default function splash({navigation}) {
+  // const crypt = new cryptr('secretkey');
+  // const f = crypt.encrypt('string');
+  // console.log(crypt.decrypt(f));
+
+  
+
   return (
     <View
       style={{flex: 1, backgroundColor: '#77FFFF', justifyContent: 'center'}}>

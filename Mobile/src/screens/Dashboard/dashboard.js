@@ -16,8 +16,16 @@ import {
 var deviceWidth = Dimensions.get('window').width;
 
 export default function dashboard({navigation}) {
+  const appplications = [
+    {
+      name: "addhaar",
+      image: "../../assets/images/h1.png",
+      
+    },
+    
+  ];
   return (
-    <ScrollView style={{backgroundColor: '#EFFFFD'}}>
+    <View style={{backgroundColor: '#EFFFFD'}}>
       <View
         style={{
           flexDirection: 'row',
@@ -30,7 +38,7 @@ export default function dashboard({navigation}) {
         <Image source={require('../../assets/images/icon2.png')} style={{}} />
       </View>
       <View
-        style={{justifyContent: 'center', alignItems: 'center', marginTop: 38}}>
+        style={{justifyContent: 'center', alignItems: 'center', marginVertical: 15}}>
         <Text
           style={{
             textAlign: 'center',
@@ -48,6 +56,12 @@ export default function dashboard({navigation}) {
           Connected Applications
         </Text>
       </View>
+      <View style={{backgroundColor:'#EFFFFD', height: Dimensions.get('screen').height / 1.5,borderColor:'red',borderWidth:1}}>
+{/* scrollview */}
+<ScrollView>
+  
+</ScrollView>
+      </View>
       <View
         style={{alignItems: 'center', justifyContent: 'center', marginTop: 30}}>
         <View
@@ -55,7 +69,7 @@ export default function dashboard({navigation}) {
             flex: 1 / 3,
             backgroundColor: '#FAFAFA',
             height: 80,
-            marginTop: Dimensions.get('screen').height - 450,
+            // marginTop: Dimensions.get('screen').height - 450,
             //alignItems:'flex-end',position:'absolute',alignSelf:'flex-end',marginTop:deviceWidth
           }}>
           <View
@@ -91,7 +105,7 @@ export default function dashboard({navigation}) {
           </View>
         </View>
       </View>
-    </ScrollView>
+    </View>
   );
 }
 

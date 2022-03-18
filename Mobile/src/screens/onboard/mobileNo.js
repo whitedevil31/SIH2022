@@ -57,7 +57,7 @@ export default function mobileNo({navigation}) {
           style={{
             backgroundColor: 'white',
             marginHorizontal: 48,
-            marginTop: 55,
+            marginTop: 5,
             borderRadius:15,
             //shadowColor: 'rgba(0, 0, 0, 0.25)',
             shadowColor: '#000000',
@@ -91,7 +91,7 @@ export default function mobileNo({navigation}) {
             justifyContent: 'center',
             alignContent: 'center',
             alignItems: 'center',
-            marginTop: 40,
+            marginTop: 25,
             marginHorizontal:13,
             shadowColor: '#000000',
             shadowOffset: {width: 0, height: 2},
@@ -143,10 +143,10 @@ export default function mobileNo({navigation}) {
 
                 //marginHorizontal: 6,
               }}
-              onPress={postOrder}
-              //  onPress={() => {
-              //    navigation.navigate('otp');
-              //  }}
+              // onPress={postOrder}
+               onPress={() => {
+                 navigation.navigate('otp');
+               }}
             >
               <Text style={styles.text2}>Continue</Text>
             </TouchableOpacity>
