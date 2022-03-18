@@ -1016,7 +1016,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@react-native-async-storage/async-storage@^1.13.4":
+"@react-native-async-storage/async-storage@^1.13.4", "@react-native-async-storage/async-storage@^1.16.3":
   version "1.16.3"
   resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.16.3.tgz#f52dc48469c3384d870d581d169e5486c2295701"
   integrity sha512-yTjoTKTwI7yMi2IIlzauA7t1zoPLatEGqkvEtf4Z5p91qYp4o3M5Rdb9NiyQz7pwlTw8FqWawYPUz8nlQ2z06Q==

@@ -8,6 +8,7 @@ import otp from './src/screens/onboard/otp';
 import splash from './src/screens/splash';
 import dashboard from './src/screens/Dashboard/dashboard';
 import QRScan from './src/screens/qr/qr';
+import dash from './src/screens/dash/dash';
 
 const Stack = createNativeStackNavigator();
 
