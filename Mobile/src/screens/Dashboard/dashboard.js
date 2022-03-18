@@ -13,6 +13,8 @@ import {
 
 //mport Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+var deviceWidth = Dimensions.get('window').width;
+
 export default function dashboard({navigation}) {
   return (
     <ScrollView style={{backgroundColor: '#EFFFFD'}}>
@@ -27,35 +29,68 @@ export default function dashboard({navigation}) {
         }}>
         <Image source={require('../../assets/images/icon2.png')} style={{}} />
       </View>
-      <View style={{justifyContent: 'center',
-          alignItems: 'center', marginTop:38}}>
-<Text style={{textAlign: 'center',
-    alignItems: 'center',
-    color: 'gray',
-    fontSize: 30,
-    fontFamily: 'OpenSans',
-    marginHorizontal: 35,
+      <View
+        style={{justifyContent: 'center', alignItems: 'center', marginTop: 38}}>
+        <Text
+          style={{
+            textAlign: 'center',
+            alignItems: 'center',
+            color: 'gray',
+            fontSize: 30,
+            fontFamily: 'OpenSans',
+            marginHorizontal: 35,
 
-    fontSize: 15,
-    fontWeight: 'bold',
+            fontSize: 15,
+            fontWeight: 'bold',
 
-    fontFamily: 'OpenSans',}}>
-Connected Applications
-</Text>
+            fontFamily: 'OpenSans',
+          }}>
+          Connected Applications
+        </Text>
       </View>
-      <View style={{alignItems: 'center', justifyContent: 'center',marginTop:30}}>
-        <TouchableOpacity  
-   //onPress={_onLoginPressed}
-   style={{ alignItems: 'center', justifyContent: 'center', minHeight: 60, backgroundColor: '#49FFF4', borderRadius: 16, 
-    marginTop: 20, width: Dimensions.get('window').width * 0.87, }}>
-         
-         <Text 
-            style={{ fontSize: 20,  color: '#393737', justifyContent: "center", alignItems: "center",fontFamily:'OpenSans' }}>
-             Verify and Create Account
-             </Text>
-            
- </TouchableOpacity>
+      <View
+        style={{alignItems: 'center', justifyContent: 'center', marginTop: 30}}>
+        <View
+          style={{
+            flex: 1 / 3,
+            backgroundColor: '#FAFAFA',
+            height: 80,
+            marginTop: Dimensions.get('screen').height - 450,
+            //alignItems:'flex-end',position:'absolute',alignSelf:'flex-end',marginTop:deviceWidth
+          }}>
+          <View
+            style={{
+              flex: 1 / 2,
+              alignContent: 'center',
+              justifyContent: 'center',
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('qr');
+              }}
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: 60,
+                backgroundColor: '#49FFF4',
+                borderRadius: 16,
+                marginTop: 20,
+                width: Dimensions.get('window').width * 0.87,
+              }}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: '#393737',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  fontFamily: 'OpenSans',
+                }}>
+                Add Application +
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
+      </View>
     </ScrollView>
   );
 }

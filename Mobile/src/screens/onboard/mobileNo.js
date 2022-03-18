@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -13,6 +13,27 @@ import {
 //mport Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function mobileNo({navigation}) {
+  // const [mobileNumber, setmobileNumber] = useState('');
+
+  // const postOrder = () => {
+  //   const url = 'http://localhost:5000/user/getOtp';
+
+  //   let data = {
+  //     mobileNumber: mobileNumber,
+  //   };
+
+  //   console.log('Data:' + JSON.stringify(data));
+  //   fetch(url, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(data),
+  //   }).then(response => (console.log(response),
+  //   navigation.navigate('otp'))
+  //   );
+  // };
+
   return (
     <View style={styles.container}>
       <SafeAreaView>
@@ -31,36 +52,54 @@ export default function mobileNo({navigation}) {
           </View>
           <View style={{width: 20}} />
         </View>
-        <Image
-          source={require('../../assets/images/hand.png')}
-          style={{marginHorizontal: 20, marginTop:15, alignSelf: 'center', marginBottom: 0}}
-          resizeMode="contain"
-        />
-        <View style={{marginTop:15}}>
+        <View
+          style={{
+            backgroundColor: 'white',
+            marginHorizontal: 48,
+            marginTop: 55,
+            borderRadius:15,
+            //shadowColor: 'rgba(0, 0, 0, 0.25)',
+            shadowColor: '#000000',
+            shadowOffset: {width: 0, height: 2},
+            
+            shadowOpacity: 2.5,
+            shadowRadius: 3,
+            elevation: 8,
+           borderRadius:20
+          }}>
+          <Image
+            source={require('../../assets/images/h1.png')}
+            style={{
+              marginHorizontal: 20,
+              marginTop: 15,
+              alignSelf: 'center',
+              marginBottom: 0,
+            }}
+            resizeMode="contain"
+          />
+        </View>
+        <View style={{marginTop: 25}}>
           <Text style={styles.text2}>
             You'll receive a 4 digit code to verify next.
           </Text>
         </View>
         <View
           style={{
-            
             // backgroundColor: '#ffffee',
-            backgroundColor: 'white',
+            backgroundColor: '#C3FFF8',
             justifyContent: 'center',
             alignContent: 'center',
             alignItems: 'center',
-            marginTop: 20,
-
+            marginTop: 40,
+            marginHorizontal:13,
             shadowColor: '#000000',
             shadowOffset: {width: 0, height: 2},
-            width: Dimensions.get('window').width,
+            
             shadowOpacity: 2.5,
             shadowRadius: 3,
             elevation: 5,
-            borderBottomLeftRadius: 20,
-            borderBottomRightRadius: 20,
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
+            borderRadius:5,
+            
           }}>
           <View
             style={{
@@ -74,14 +113,15 @@ export default function mobileNo({navigation}) {
               keyboardType={'phone-pad'}
               // returnKeyType="next"
               //value={email.value}
-              placeholder="Enter your phone"
+              placeholder="Enter your phone no."
               placeholderTextColor="gray"
               //onChangeText={text => setEmail({value: text, error: ''})}
-
+              // onChangeText={text => setmobileNumber(text)}
+              // defaultValue={mobileNumber}
               style={{
                 fontWeight: '400',
                 fontSize: 18,
-                
+
                 color: 'black',
                 height: 60,
                 marginHorizontal: 6,
@@ -89,22 +129,24 @@ export default function mobileNo({navigation}) {
                 marginRight: 30,
                 backgroundColor: 'white',
 
-                borderRadius: 8,
+                borderRadius: 5,
                 paddingLeft: 15,
               }}
             />
             <TouchableOpacity
               style={{
-                backgroundColor: '#00e0d3',
-                height: 60,
-                borderRadius: 16,
+                backgroundColor: '#93FF78',
+                height: 50,
+                borderRadius: 10,
                 justifyContent: 'center',
 
                 //marginHorizontal: 6,
               }}
-              onPress={() => {
-                navigation.navigate('otp');
-              }}>
+              //onPress={postOrder}
+               onPress={() => {
+                 navigation.navigate('otp');
+               }}
+            >
               <Text style={styles.text2}>Continue</Text>
             </TouchableOpacity>
             <View style={{width: 20}} />
@@ -117,7 +159,7 @@ export default function mobileNo({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor:'#EFFFFD',
+    backgroundColor: '#EFFFFD',
     flex: 1,
   },
   header: {
@@ -125,7 +167,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
-     
   },
   headertitle: {
     fontSize: 24,
@@ -138,7 +179,7 @@ const styles = StyleSheet.create({
   text2: {
     textAlign: 'center',
     alignItems: 'center',
-    color: 'gray',
+    color: 'black',
     fontSize: 30,
     fontFamily: 'OpenSans',
     marginHorizontal: 35,
