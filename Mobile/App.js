@@ -6,6 +6,7 @@ import intro from './src/screens/intro/intro';
 import mobileNo from './src/screens/onboard/mobileNo';
 import otp from './src/screens/onboard/otp';
 import QRScan from './src/screens/qr/qr';
+import dash from './src/screens/dash/dash';
 
 const Stack = createNativeStackNavigator();
 

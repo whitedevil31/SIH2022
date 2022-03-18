@@ -1,40 +1,65 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
-import QRCode from "react-qr-code";
-import close from "../assets/close.jpg";
-import tick from "../assets/tick.png";
+import React, { useState } from 'react'
+import Modal from 'react-modal'
+import QRCode from 'react-qr-code'
+
+import close from '../assets/close.jpg'
+import tick from '../assets/tick.png'
+import axios, { AxiosResponse } from 'axios'
+import Cryptr from 'cryptr'
 
 export default function PageTwo() {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  const [aadhars, setAadhars] = useState("");
-  const [qrGenerated, setQrGenerated] = React.useState(false);
-  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false)
+  const [aadhars, setAadhars] = useState('')
+  const [encrypted, setEncrypted] = useState('')
+  const [qrGenerated, setQrGenerated] = React.useState(false)
+  let subtitle
+  const cryptr = new Cryptr('sih2020')
+
+  const data = {
+    aadharNumber: aadhars,
+  }
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
+
+  // console.log(data)
+  let encryptedData
   const generateQr = async () => {
-    setQrGenerated(true);
-  };
+    //setQrGenerated(true)
+    try {
+      const postData = await axios.post(
+        'http://localhost:5000/aadhar/get',
+        data,
+      )
+      const encryptedMobile = cryptr.encrypt(postData.data)
+      const websiteName = 'https://www.cowin.gov.in/'
+      encryptedData = {
+        mobile: encryptedMobile,
+        websiteName,
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
+    subtitle.style.color = '#f00'
   }
 
   const customStyles = {
     content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
     },
-  };
+  }
 
   return (
     <div className="pageTwo">
@@ -57,7 +82,7 @@ export default function PageTwo() {
           </div>
           {qrGenerated == true ? (
             <div className="afterqr">
-              <QRCode value={aadhars} />
+              <QRCode value={encryptedData} />
             </div>
           ) : (
             <>
@@ -70,7 +95,7 @@ export default function PageTwo() {
           <ul className="steps">
             <li>
               Step 1: Please download our app from Playstore and register there
-              to continue{" "}
+              to continue{' '}
             </li>
             <li>
               Step 2: Once registered ,Please use the inbuilt QR code scanner to
@@ -103,5 +128,5 @@ export default function PageTwo() {
         </Modal>
       </div>
     </div>
-  );
+  )
 }
