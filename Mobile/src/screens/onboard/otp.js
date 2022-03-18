@@ -35,22 +35,33 @@ export default function otp({navigation}) {
         </View>
         <View style={{marginTop: 30}}>
           <View style={{marginTop: 10}}>
-            <Text style={styles.text2}>Code is sent to 894 534 6789</Text>
+            <Text style={styles.text2}>Code is sent to +91 XXXX XXX XXXX</Text>
           </View>
           <View style={styles.container2}>
             <OTPInputView
               pinCount={6}
+              autoFocusOnLoad={true}
               style={styles.otpView}
               codeInputFieldStyle={styles.underlineStyleBase}
               onCodeFilled={value => {
                 console.log(value);
+              //   onCodeFilled = {(code) => {
+              //     console.log(`Code is ${code}, you are good to go!`)
+              // }}
+                
               }}
             />
           </View>
 
           <View style={{marginTop: 60}}>
-            <TouchableOpacity style={styles.text2}>
-              <Text style={{fontSize: 18}}>Didn't recieve code? </Text>
+            <TouchableOpacity style={{}}>
+              <Text style={{textAlign: 'center',
+    alignItems: 'center',
+    color: 'gray',
+    fontSize: 22,
+    fontFamily: 'OpenSans',
+    marginHorizontal: 35,
+    marginTop:25}}>Didn't recieve code? </Text>
 
               <Text style={styles.text3}>Get via a call</Text>
             </TouchableOpacity>
@@ -62,12 +73,14 @@ export default function otp({navigation}) {
               marginTop: 30,
             }}>
             <TouchableOpacity
-              //onPress={_onLoginPressed}
+              onPress={() => {
+                navigation.navigate('dashboard');
+              }}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
                 minHeight: 60,
-                backgroundColor: '#00e0d3',
+                backgroundColor: '#B6FFFB',
                 // backgroundColor: '#49FFF4',
                 borderRadius: 16,
                 marginTop: 20,
@@ -76,7 +89,7 @@ export default function otp({navigation}) {
               <Text
                 style={{
                   fontSize: 20,
-                  color: 'gray',
+                  color: 'black',
                   justifyContent: 'center',
                   alignItems: 'center',
                   fontFamily: 'OpenSans',
@@ -117,15 +130,17 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: 'OpenSans',
     marginHorizontal: 35,
+    marginTop:25
   },
   text3: {
     textAlign: 'center',
     alignItems: 'center',
-    color: 'gray',
-    fontSize: 18,
+    color: '#18B40A',
+    fontSize: 17,
     fontFamily: 'OpenSans',
     marginHorizontal: 35,
     fontWeight: 'bold',
+    marginTop:15
   },
   container2: {
     flex: 1,
