@@ -5,14 +5,14 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
 export default function intro({navigation}) {
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
+    <View style={{flex: 1, backgroundColor: '#EFFFFD'}}>
       <Image
         source={require('../../assets/images/pic.png')}
         style={{margin: 20, alignSelf: 'center', marginBottom: 0}}
         resizeMode="contain"
       />
       <View style={{flex: 1 / 4}}>
-        <Text style={styles.text}>Do You Bill My Card?</Text>
+        <Text style={styles.text}>Do You Bill My Card</Text>
       </View>
       <View style={{flex: 1 / 4}}>
         <Text style={styles.text2}>
@@ -26,31 +26,12 @@ export default function intro({navigation}) {
           }}>
           {/* <View style={styles.arrow}> */}
           <Text style={styles.title}>{'>>'}</Text>
-          <Text
-            style={{
-              fontSize: 18,
-              // marginBottom:16,
-              color: 'gray',
-            }}>
-            Next
-          </Text>
-        </View>
-        <View style={{ flex: 1 / 4, }}>
-          <Text style={styles.text2}>
-          We will never bill your card. We earn from services and not from users.
-          </Text>
-          <TouchableOpacity style={{alignItems: 'center',marginTop:10}}
-onPress={()=>{navigation.navigate('mobileNo')}}
->
-{/* <View style={styles.arrow}> */}
-    <Text style={styles.title}>{'>>'}</Text>
-    
-{/* </View> */}
-</TouchableOpacity>
-        </View>
-        
-</View>
-    )
+
+          {/* </View> */}
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
 }
 const styles = StyleSheet.create({
   arrow: {
