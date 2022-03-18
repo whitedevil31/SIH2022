@@ -1,0 +1,95 @@
+import React from 'react';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TextInput,
+  TouchableOpacity,
+  ScrollView,
+  StyleSheet,
+  Image,
+  Dimensions,
+} from 'react-native';
+
+//mport Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+export default function dashboard({navigation}) {
+  return (
+    <ScrollView style={{backgroundColor: '#EFFFFD'}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          backgroundColor: '#4DEAEA',
+          width: Dimensions.get('window').width,
+          height: Dimensions.get('screen').height / 14,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Image source={require('../../assets/images/icon2.png')} style={{}} />
+      </View>
+      <View style={{justifyContent: 'center',
+          alignItems: 'center', marginTop:38}}>
+<Text style={{textAlign: 'center',
+    alignItems: 'center',
+    color: 'gray',
+    fontSize: 30,
+    fontFamily: 'OpenSans',
+    marginHorizontal: 35,
+
+    fontSize: 15,
+    fontWeight: 'bold',
+
+    fontFamily: 'OpenSans',}}>
+Connected Applications
+</Text>
+      </View>
+      <View style={{alignItems: 'center', justifyContent: 'center',marginTop:30}}>
+        <TouchableOpacity  
+   //onPress={_onLoginPressed}
+   style={{ alignItems: 'center', justifyContent: 'center', minHeight: 60, backgroundColor: '#49FFF4', borderRadius: 16, 
+    marginTop: 20, width: Dimensions.get('window').width * 0.87, }}>
+         
+         <Text 
+            style={{ fontSize: 20,  color: '#393737', justifyContent: "center", alignItems: "center",fontFamily:'OpenSans' }}>
+             Verify and Create Account
+             </Text>
+            
+ </TouchableOpacity>
+        </View>
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'red',
+    flex: 1,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+  },
+  headertitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  iconheader: {
+    color: 'gray',
+  },
+  text2: {
+    textAlign: 'center',
+    alignItems: 'center',
+    color: 'gray',
+    fontSize: 30,
+    fontFamily: 'OpenSans',
+    marginHorizontal: 35,
+
+    fontSize: 15,
+    fontWeight: 'bold',
+
+    fontFamily: 'OpenSans',
+  },
+});

@@ -1,14 +1,28 @@
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import intro from './src/screens/intro/intro';
 import mobileNo from './src/screens/onboard/mobileNo';
 import otp from './src/screens/onboard/otp';
+import splash from './src/screens/splash';
+import dashboard from './src/screens/Dashboard/dashboard';
 import QRScan from './src/screens/qr/qr';
 import dash from './src/screens/dash/dash';
 
 const Stack = createNativeStackNavigator();
+
+function LogoTitle() {
+  return (
+    <View>
+      <Image
+        style={{height: 45, alignSelf: 'center'}}
+        resizeMode="contain"
+        source={require('./src/assets/images/icon2.png')}
+      />
+    </View>
+  );
+}
 
 function App() {
   return (
@@ -16,8 +30,9 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen
           name="intro"
-          component={QRScan}
+          component={intro}
           options={{
+            //headerTitle: (props) => <LogoTitle {...props} />
             title: null,
             headerShown: false,
           }}
@@ -41,6 +56,22 @@ function App() {
         <Stack.Screen
           name="qr"
           component={QRScan}
+          options={{
+            title: null,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="splash"
+          component={splash}
+          options={{
+            title: null,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="dashboard"
+          component={dashboard}
           options={{
             title: null,
             headerShown: false,

@@ -43,9 +43,7 @@ export default function mobileNo({navigation}) {
         </View>
         <View
           style={{
-            shadowColor: '#000000',
-            shadowOffset: {width: 0, height: 2},
-            width: Dimensions.get('window').width,
+            
             // backgroundColor: '#ffffee',
             backgroundColor: 'white',
             justifyContent: 'center',
@@ -53,6 +51,9 @@ export default function mobileNo({navigation}) {
             alignItems: 'center',
             marginTop: 20,
 
+            shadowColor: '#000000',
+            shadowOffset: {width: 0, height: 2},
+            width: Dimensions.get('window').width,
             shadowOpacity: 2.5,
             shadowRadius: 3,
             elevation: 5,
@@ -73,7 +74,7 @@ export default function mobileNo({navigation}) {
               keyboardType={'phone-pad'}
               // returnKeyType="next"
               //value={email.value}
-              placeholder="Enter your Phone"
+              placeholder="Enter your phone"
               placeholderTextColor="gray"
               //onChangeText={text => setEmail({value: text, error: ''})}
 
@@ -116,7 +117,7 @@ export default function mobileNo({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    backgroundColor:'#EFFFFD',
     flex: 1,
   },
   header: {
@@ -124,6 +125,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
+     
   },
   headertitle: {
     fontSize: 24,
