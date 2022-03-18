@@ -1,61 +1,132 @@
-import React, {useState} from 'react'
-export default function PageTwo(){
-    const [modal, setModal] = useState(false);
-  
-    const toggleModal = () => {
-      setModal(!modal);
-    };
-  
-    if(modal) {
-      document.body.classList.add('active-modal')
-    } else {
-      document.body.classList.remove('active-modal')
+import React, { useState } from 'react'
+import Modal from 'react-modal'
+import QRCode from 'react-qr-code'
+
+import close from '../assets/close.jpg'
+import tick from '../assets/tick.png'
+import axios, { AxiosResponse } from 'axios'
+import Cryptr from 'cryptr'
+
+export default function PageTwo() {
+  const [modalIsOpen, setIsOpen] = React.useState(false)
+  const [aadhars, setAadhars] = useState('')
+  const [encrypted, setEncrypted] = useState('')
+  const [qrGenerated, setQrGenerated] = React.useState(false)
+  let subtitle
+  const cryptr = new Cryptr('sih2020')
+
+  const data = {
+    aadharNumber: aadhars,
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  // console.log(data)
+  let encryptedData
+  const generateQr = async () => {
+    //setQrGenerated(true)
+    try {
+      const postData = await axios.post(
+        'http://localhost:5000/aadhar/get',
+        data,
+      )
+      const encryptedMobile = cryptr.encrypt(postData.data)
+      const websiteName = 'https://www.cowin.gov.in/'
+      encryptedData = {
+        mobile: encryptedMobile,
+        websiteName,
+      }
+    } catch (e) {
+      console.log(e)
     }
-    return(
+  }
+  function afterOpenModal() {
+    subtitle.style.color = '#f00'
+  }
 
-    
-        <div className='pageTwo' >
-            <div className="bg-img">
-                <div className="logo2">/eft Shift</div>
-                <div className="qr-boc"></div>
-                <div className="inst">
-                <ul className='steps'>
-                    <li>Step 1: Please download out app from </li>
-                    <li>Step 2 kjgyjrdjyfukhb yjgj yhfc kyvluhvygk  hjb kuftyf kytv kluv u it d6rd6rt yugyu fiotf  uiugo67trfi67f ou pyup87g</li>
-                    <li>Step 3 gcrestg il iyu gvyit glu buyotyfio uly ouvo7tyfri6ditf uo tyf7t y hi oyugi6ry d</li>
-                </ul>
-                
-                </div>
-                {/* <button onClick={toggleModal} class="bg-green-400 hover:bg-gray-100 text-gray-800 font-bold font-semibold py-2 px-4 border border-gray-400 rounded verify-btn">
-                Verify Status
-                </button> */}
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  }
 
-<button onClick={toggleModal} className="btn-modal">
-        Open
-      </button>
-
-      {modal && (
-        <div className="modal">
-          <div onClick={toggleModal} className="overlay"></div>
-          <div className="modal-content">
-            <h2>Hello Modal</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-              perferendis suscipit officia recusandae, eveniet quaerat assumenda
-              id fugit, dignissimos maxime non natus placeat illo iusto!
-              Sapiente dolorum id maiores dolores? Illum pariatur possimus
-              quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
-              placeat tempora vitae enim incidunt porro fuga ea.
-            </p>
-            <button className="close-modal" onClick={toggleModal}>
-              CLOSE
+  return (
+    <div className="pageTwo">
+      <div className="bg-img">
+        <div className="logo2">/eft Shift</div>
+        <div className="flex pt-48 pl-72">
+          <div className="w-1/2 flex justify-between">
+            <div class="mb-4">
+              <input
+                class="aadhaarinput"
+                id="username"
+                type="text"
+                onChange={(e) => setAadhars(e.target.value)}
+                placeholder="Enter your Aadhar Number"
+              />
+            </div>
+            <button class="genqr" onClick={generateQr}>
+              Generate QR Code!
             </button>
           </div>
-        </div>
-      )}
-      <p>pisci eaque laboriosam nam quaerat voluptate quae voluptatibus explicabo quas retis assumenda ugit repellendus? Illum maxime obcaecati, animi tenetur eos totam. Sint iure omnis velit as</p>
+          {qrGenerated == true ? (
+            <div className="afterqr">
+              <QRCode value={encryptedData} />
             </div>
-            
-</div>
-    )
+          ) : (
+            <>
+              <div className="qrempty"></div>
+            </>
+          )}
+        </div>
+
+        <div className="inst">
+          <ul className="steps">
+            <li>
+              Step 1: Please download our app from Playstore and register there
+              to continue{' '}
+            </li>
+            <li>
+              Step 2: Once registered ,Please use the inbuilt QR code scanner to
+              scan this QR code .
+            </li>
+            <li>
+              Step 3: After scanning please click on verify status button to
+              link Your Cowin profile with our App
+            </li>
+            <li>Step 4 : Enjoy seamless verification process now,Thank you</li>
+          </ul>
+        </div>
+        <button onClick={openModal} class="verifybutton">
+          Verify Status
+        </button>
+
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <button onClick={closeModal}>
+            <img src={close} className="closesize" alt="Close" />
+          </button>
+          <div className="greentext">Verified Successfully</div>
+          <img src={tick} className="ticksize" alt="Tick" />
+          <div className="modaltext">You can use offline otp to login!</div>
+        </Modal>
+      </div>
+    </div>
+  )
 }
